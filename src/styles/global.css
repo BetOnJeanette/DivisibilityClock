@@ -92,6 +92,10 @@ nav {
     padding: 50px 0 5px 0;
 }
 
+.externalLink, .externalLink:visited {
+    color: var(--accentColor);
+}
+
 @media (max-width: 480px) {
     .content {
         width: 100vw;
