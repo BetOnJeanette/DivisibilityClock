@@ -17,10 +17,32 @@ function Clock() {
 }
 
 function Controls({divisor, setDivisor}: IControlsProps){
+    /**
+     * Tries to validate and update the input
+     * @param input The text to validate
+     */
+    function ValidateTextInput(input: string){
+        const numericInput = Number(input);
+        if (Number.isNaN(numericInput)) {
+            setDivisor(divisor);
+            return;
+        }
+
+        UpdateNumericInput(numericInput);
+    }
+    /**
+     * Updates the divisor based on the numeric input
+     * @param input The number to update with
+     */
+    function UpdateNumericInput(input: number){
+        const roundedNumber = Math.round(input);
+        setDivisor(Math.max(roundedNumber, 2));
+    }
+
     return <div>
-        <button class="divisorButtons" onClick={() => setDivisor(Math.max(divisor() - 1, 2))}>-</button>
-        <p id="divisorLabel">{divisor()}</p>
-        <button class="divisorButtons" onClick={() => setDivisor(divisor() + 1)}>+</button>
+        <button class="divisorButtons" onClick={() => UpdateNumericInput(divisor() - 1)}>-</button>
+        <input type="numeric" onChange={(e) => ValidateTextInput(e.target.value)} value={divisor()}/>
+        <button class="divisorButtons" onClick={() => UpdateNumericInput(divisor() + 1)}>+</button>
     </div>
 }
 
