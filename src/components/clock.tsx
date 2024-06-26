@@ -37,21 +37,13 @@ function Controls({divisor, setDivisor}: IControlsProps){
             return;
         }
 
-        UpdateNumericInput(numericInput);
-    }
-    /**
-     * Updates the divisor based on the numeric input
-     * @param input The number to update with
-     */
-    function UpdateNumericInput(input: number){
-        const roundedNumber = Math.round(input);
+        const roundedNumber = Math.round(numericInput);
         setDivisor(Math.max(roundedNumber, 2));
     }
 
-    return <div>
-        <button class="divisorButtons" onClick={() => UpdateNumericInput(divisor() - 1)}>-</button>
+    return <div id="controls">
+        <label>divisor: </label>
         <input class="rightText" type="numeric" onChange={(e) => ValidateTextInput(e.target.value)} value={divisor()}/>
-        <button class="divisorButtons" onClick={() => UpdateNumericInput(divisor() + 1)}>+</button>
     </div>
 }
 
