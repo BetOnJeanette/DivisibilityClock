@@ -1,7 +1,11 @@
+:root{
+    --accentColor: cornflowerblue;
+}
+
 #DiagramContainer {
     width: 100%;
     min-height: 70vh;
-    border: 4px solid black;
+    border: 4px solid var(--accentColor);
 }
 
 #ClockDiagram {
