@@ -92,7 +92,7 @@ nav {
     padding: 50px 0 5px 0;
 }
 
-.externalLink, .externalLink:visited {
+a, a:visited {
     color: var(--accentColor);
 }
 
