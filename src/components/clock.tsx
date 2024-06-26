@@ -9,10 +9,10 @@ interface IControlsProps {
 function Clock() {
     const [divisor, setDivisor] = createSignal(2);
     
-    return <>
+    return <div id="ClockDiagram">
         <Controls divisor={divisor} setDivisor={setDivisor}/>
         <Diagram divisor={divisor}/>
-    </>
+    </div>
 
 }
 
