@@ -50,7 +50,7 @@ function Controls({divisor, setDivisor}: IControlsProps){
 
     return <div>
         <button class="divisorButtons" onClick={() => UpdateNumericInput(divisor() - 1)}>-</button>
-        <input type="numeric" onChange={(e) => ValidateTextInput(e.target.value)} value={divisor()}/>
+        <input class="rightText" type="numeric" onChange={(e) => ValidateTextInput(e.target.value)} value={divisor()}/>
         <button class="divisorButtons" onClick={() => UpdateNumericInput(divisor() + 1)}>+</button>
     </div>
 }

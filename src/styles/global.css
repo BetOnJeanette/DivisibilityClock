@@ -10,7 +10,9 @@
     align-items: center;
     flex-direction: column;
 }
-
+.rightText{ 
+    text-align: right;
+}
 .divisorButtons {
     display: inline;
 }
