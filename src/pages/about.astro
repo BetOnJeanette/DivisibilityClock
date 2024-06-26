@@ -1,0 +1,24 @@
+---
+import GeneralLayout from "../layouts/generalLayout.astro";
+---
+<GeneralLayout title="About">
+    <div>
+        <h1>Who made this?</h1>
+        <p>This app was made by Jeanette Crull! <a href="https://betonjeanette.github.io/Portfolio/">You can see my portfolio here.</a></p>
+    </div>
+    <div>
+        <h1>Why did I make this?</h1>
+        <p>
+            I saw the Numberphile video <i>Solving Sevens</i>, and wanted to see how the graphs changed with different divisors. It looked like a nice side-project, and here we are.
+        </p>
+        <iframe class="widescreenVideo" src="https://www.youtube.com/embed/Ki-M1DJIZsk" title="Solving Seven - Numberphile" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div>
+        <h1>How did I make this?</h1>
+        <p>
+            The pages are built on Astro. 
+            The diagram itself utilizes SolidJS for state management (probably a bit overkill, but I wanted to dip my toes in with a new tool), and sigma.js for the diagram.
+            The GitHub repository is <a href="https://github.com/BetOnJeanette/DivisibilityClock">available here</a>!
+        </p>
+    </div>
+</GeneralLayout>
