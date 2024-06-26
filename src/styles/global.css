@@ -63,10 +63,18 @@ nav {
 .link a, .link a:visited, #siteName a, #siteName a:visited{
     color: inherit;
     text-decoration: none;
-    display: inline-block;
     position: relative;
-
 }
+
+#siteName * {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+#siteName h1 {
+    padding-left: 10px;
+}
+
 .link a:after {
     content: "";
     position: absolute;
