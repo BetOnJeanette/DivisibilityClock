@@ -8,6 +8,10 @@
     border: 4px solid var(--accentColor);
 }
 
+body {
+    margin: 0;
+}
+
 #ClockDiagram {
     display: flex;
     justify-content: center;
