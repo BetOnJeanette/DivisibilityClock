@@ -6,6 +6,10 @@ interface IControlsProps {
     setDivisor: Setter<number>
 }
 
+/**
+ * The clock diagram
+ * @returns The clock diagram
+ */
 function Clock() {
     const [divisor, setDivisor] = createSignal(2);
     
@@ -16,11 +20,38 @@ function Clock() {
 
 }
 
+/**
+ * The controls for the diagram
+ * @param param0 The parameters for the prop
+ * @returns The controls for the graph
+ */
 function Controls({divisor, setDivisor}: IControlsProps){
+    /**
+     * Tries to validate and update the input
+     * @param input The text to validate
+     */
+    function ValidateTextInput(input: string){
+        const numericInput = Number(input);
+        if (Number.isNaN(numericInput)) {
+            setDivisor(divisor);
+            return;
+        }
+
+        UpdateNumericInput(numericInput);
+    }
+    /**
+     * Updates the divisor based on the numeric input
+     * @param input The number to update with
+     */
+    function UpdateNumericInput(input: number){
+        const roundedNumber = Math.round(input);
+        setDivisor(Math.max(roundedNumber, 2));
+    }
+
     return <div>
-        <button class="divisorButtons" onClick={() => setDivisor(Math.max(divisor() - 1, 2))}>-</button>
-        <p id="divisorLabel">{divisor()}</p>
-        <button class="divisorButtons" onClick={() => setDivisor(divisor() + 1)}>+</button>
+        <button class="divisorButtons" onClick={() => UpdateNumericInput(divisor() - 1)}>-</button>
+        <input class="rightText" type="numeric" onChange={(e) => ValidateTextInput(e.target.value)} value={divisor()}/>
+        <button class="divisorButtons" onClick={() => UpdateNumericInput(divisor() + 1)}>+</button>
     </div>
 }
 
