@@ -6,6 +6,10 @@ interface IControlsProps {
     setDivisor: Setter<number>
 }
 
+/**
+ * The clock diagram
+ * @returns The clock diagram
+ */
 function Clock() {
     const [divisor, setDivisor] = createSignal(2);
     
@@ -16,6 +20,11 @@ function Clock() {
 
 }
 
+/**
+ * The controls for the diagram
+ * @param param0 The parameters for the prop
+ * @returns The controls for the graph
+ */
 function Controls({divisor, setDivisor}: IControlsProps){
     /**
      * Tries to validate and update the input
