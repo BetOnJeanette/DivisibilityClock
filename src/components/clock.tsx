@@ -17,11 +17,11 @@ function Clock() {
 }
 
 function Controls({divisor, setDivisor}: IControlsProps){
-    return <span>
-        <button onClick={() => setDivisor(Math.max(divisor() - 1, 2))}>-</button>
-        <p>{divisor()}</p>
-        <button onClick={() => setDivisor(divisor() + 1)}>+</button>
-    </span>
+    return <div>
+        <button class="divisorButtons" onClick={() => setDivisor(Math.max(divisor() - 1, 2))}>-</button>
+        <p id="divisorLabel">{divisor()}</p>
+        <button class="divisorButtons" onClick={() => setDivisor(divisor() + 1)}>+</button>
+    </div>
 }
 
 export default Clock;

@@ -1,5 +1,16 @@
-#DiagramContainer{
+#DiagramContainer {
     min-width: 80vw;
     min-height: 70vh;
     border: 4px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+.divisorButtons {
+    display: inline;
+}
+
+#divisorLabel {
+    display: inline;
+    padding: 0 5px;
 }
