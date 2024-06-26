@@ -88,6 +88,10 @@ nav {
     width: min(100%, 720px);
 }
 
+#controls {
+    padding: 50px 0 5px 0;
+}
+
 @media (max-width: 480px) {
     .content {
         width: 100vw;
