@@ -34,11 +34,11 @@ function GetGraph(divisor: Accessor<number>): Graph{
     const graph = new Graph({allowSelfLoops: true});
     
     for (let index = 0; index < divisor(); index++){
-        graph.addNode(index, {label: index.toString(), x: index, y: index, size: 20});
+        graph.addNode(index, {label: index.toString(), x: index, y: index, size: 10});
     }
 
     for (let index = 0; index < divisor(); index++){
-        graph.addDirectedEdge(index, (index * 10) % divisor(), {color: "black", type: "arrow"})
+        graph.addDirectedEdge(index, (index * 10) % divisor(), {type: "arrow", size: 3})
     };
     circular.assign(graph, {scale: 100});
 
