@@ -42,8 +42,8 @@ function Controls({divisor, setDivisor}: IControlsProps){
     }
 
     return <div id="controls">
-        <label>divisor: </label>
-        <input class="rightText" type="numeric" onChange={(e) => ValidateTextInput(e.target.value)} value={divisor()}/>
+        <label for="divisor">divisor: </label>
+        <input class="rightText" name="divisor" type="numeric" onChange={(e) => ValidateTextInput(e.target.value)} value={divisor()}/>
     </div>
 }
 
