@@ -1,0 +1,21 @@
+#DiagramContainer {
+    min-width: 80vw;
+    min-height: 70vh;
+    border: 4px solid black;
+}
+
+#ClockDiagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.divisorButtons {
+    display: inline;
+}
+
+#divisorLabel {
+    display: inline;
+    padding: 0 5px;
+}
