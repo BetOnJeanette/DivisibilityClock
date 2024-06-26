@@ -1,22 +1,20 @@
 ---
-import "../styles/global.css"
+import GeneralLayout from "../layouts/generalLayout.astro"
 ---
-<html>
-    <div class="content">
-        <div>
-            <h1>What is this?</h1>
-            <p>
-                This website creates a diagram to show how multiplying by 10 changes the remainder for a given divisor. 
-                This can be useful for checking if a number is divisible by the divisor. A more detailed explanation can be found in the following Numberphile video:
-            </p>
-            <iframe class="widescreenVideo" src="https://www.youtube.com/embed/Ki-M1DJIZsk" title="Solving Seven - Numberphile" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div>
-            <h1>How do I use the diagram to test if a number is divisible by the given divisor?</h1>
-            <p>
-                Start at the node for the largest digit. While you are not on the least-significant digit, move along the arrow pointing from the node you are currently on, 
-                then add the next most-significant digit, subtracting the divisor when applicable. The node that you are after adding the least least-significant digit is the remainder.
-            </p>
-        </div>
+<GeneralLayout title="Diagram Explanation">
+    <div>
+        <h1>What is this?</h1>
+        <p>
+            This website creates a diagram to show how multiplying by 10 changes the remainder for a given divisor. 
+            This can be useful for checking if a number is divisible by the divisor. A more detailed explanation can be found in the following Numberphile video:
+        </p>
+        <iframe class="widescreenVideo" src="https://www.youtube.com/embed/Ki-M1DJIZsk" title="Solving Seven - Numberphile" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
-</html>
+    <div>
+        <h1>How do I use the diagram to test if a number is divisible by the given divisor?</h1>
+        <p>
+            Start at the node for the largest digit. While you are not on the least-significant digit, move along the arrow pointing from the node you are currently on, 
+            then add the next most-significant digit, subtracting the divisor when applicable. The node that you are after adding the least least-significant digit is the remainder.
+        </p>
+    </div>
+</GeneralLayout>
