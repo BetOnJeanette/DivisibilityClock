@@ -10,8 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.11.1",
     "@astrojs/check": "^0.7.0",
+    "@astrojs/solid-js": "^4.4.0",
+    "@types/webgl2": "^0.0.11",
+    "astro": "^4.11.1",
+    "graphology": "^0.25.4",
+    "graphology-layout": "^0.6.1",
+    "sigma": "^3.0.0-beta.23",
+    "solid-js": "^1.8.17",
     "typescript": "^5.5.2"
   }
 }
