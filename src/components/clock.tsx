@@ -48,9 +48,10 @@ function Controls({divisor, setDivisor}: IControlsProps){
         setDivisor(Math.max(roundedNumber, 2));
     }
 
-    return <div>
+    return <div id="controls">
+        <label for="divisor">divisor: </label>
         <button class="divisorButtons" onClick={() => UpdateNumericInput(divisor() - 1)}>-</button>
-        <input class="rightText" type="numeric" onChange={(e) => ValidateTextInput(e.target.value)} value={divisor()}/>
+        <input class="rightText" name="divisor" type="numeric" onChange={(e) => ValidateTextInput(e.target.value)} value={divisor()}/>
         <button class="divisorButtons" onClick={() => UpdateNumericInput(divisor() + 1)}>+</button>
     </div>
 }
