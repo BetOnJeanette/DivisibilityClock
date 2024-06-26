@@ -67,6 +67,21 @@ nav {
     position: relative;
 
 }
+.link a:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    background-color: white;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    transition: width 0.2s ease-out;
+
+}
+.link a:hover:after {
+    width: 100%;
+}
 
 .widescreenVideo{
     aspect-ratio: 16 / 9;
