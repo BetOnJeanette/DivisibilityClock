@@ -1,8 +1,7 @@
-import { createEffect, onMount, type Accessor } from "solid-js";
+import { createEffect, type Accessor } from "solid-js";
 import Sigma from "sigma";
 import Graph from "graphology";
 import { circular } from "graphology-layout";
-import { animateNodes, linear } from "sigma/utils";
 
 interface IDiagramProps{
     divisor: Accessor<number>
