@@ -16,8 +16,11 @@ function Diagram({divisor}: IDiagramProps){
     let graphDisplay: Sigma | undefined;
     createEffect(() => {
         const graph = GetGraph(divisor)
-        graphDisplay?.kill();
-        graphDisplay = new Sigma(graph, diagramElement, {});
+        if (graphDisplay == undefined) {
+            graphDisplay = new Sigma(graph, diagramElement);
+        } else {
+            graphDisplay.setGraph(graph)
+        }
         graphDisplay.viewportToFramedGraph;
     })
     const diagramContainer = <div id="DiagramContainer" ref={diagramElement}></div>
@@ -32,14 +35,17 @@ function Diagram({divisor}: IDiagramProps){
  */
 function GetGraph(divisor: Accessor<number>): Graph{
     const graph = new Graph({allowSelfLoops: true});
+    const nodes = Array.from(Array(divisor()).keys())
+    const edges = nodes.map(val => (val * 10) % divisor())
     
-    for (let index = 0; index < divisor(); index++){
-        graph.addNode(index, {label: index.toString(), x: index, y: index, size: 10});
-    }
+    nodes.forEach(node => {
+        graph.addNode(node, {label: node.toString(), x:node, y: node, size: 10 })
+    });
 
-    for (let index = 0; index < divisor(); index++){
-        graph.addDirectedEdge(index, (index * 10) % divisor(), {type: "arrow", size: 3})
-    };
+    edges.forEach((dest, source) =>{
+        graph.addDirectedEdge(source, dest, {type: "arrow", size: 3})
+    });
+    
     circular.assign(graph, {scale: 100});
 
     return graph;
