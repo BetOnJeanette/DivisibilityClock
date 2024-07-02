@@ -36,15 +36,16 @@ function Diagram({divisor}: IDiagramProps){
 function GetGraph(divisor: Accessor<number>): Graph{
     const graph = new Graph({allowSelfLoops: true});
     const nodes = Array.from(Array(divisor()).keys())
-    
     const edges = nodes.map(val => (val * 10) % divisor())
+    
     nodes.forEach(node => {
         graph.addNode(node, {label: node.toString(), x:node, y: node, size: 10 })
     });
 
-    for (let index = 0; index < divisor(); index++){
-        graph.addDirectedEdge(index, (index * 10) % divisor(), {type: "arrow", size: 3})
-    };
+    edges.forEach((dest, source) =>{
+        graph.addDirectedEdge(source, dest, {type: "arrow", size: 3})
+    });
+    
     circular.assign(graph, {scale: 100});
 
     return graph;
